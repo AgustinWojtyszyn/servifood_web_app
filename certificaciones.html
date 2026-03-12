@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Certificaciones y estándares de Servi Food Catering. ISO 9000, ISO 9001 y sistemas APPCC/HACCP para garantizar inocuidad total.">
+    <title>Certificaciones | Servi Food Catering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-dark: #010924;
+            --blue-mid: #07123d;
+            --blue-card: #101f4e;
+            --blue-highlight: #142c72;
+            --orange: #FF8C32;
+            --orange-soft: #FFC58F;
+            --white: #F7FAFF;
+            --stroke: rgba(255, 255, 255, 0.08);
+            --shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
+            --transition: all 0.35s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family:'Poppins',Arial,Helvetica,sans-serif;
+            background:#fff;
+            color:#222;
+            line-height:1.8;
+            overflow-x:hidden;
+        }
+
+        h1, h2, h3 {
+            font-family:'Playfair Display',Georgia,serif;
+            color:#1B1464;
+            line-height:1.3;
+        }
+
+        h1{font-size:clamp(2.5rem,4.8vw,4rem);}
+        h2{font-size:2.4rem;}
+        h3{font-size:1.9rem;}
+
+        p {
+            color:#222;
+            font-size:1.28rem;
+            font-weight:500;
+        }
+
+        a {
+            color:#FF8C32;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .brand-banner {
+            width: 100%;
+            background: linear-gradient(130deg, var(--blue-card), var(--blue-highlight));
+            padding: 20px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .brand-banner-logo {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .brand-banner img {
+            height: clamp(140px, 20vw, 220px);
+        }
+
+        @media (max-width: 600px) {
+            .brand-banner {
+                flex-direction: column;
+            }
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            border: none;
+            background: #FF6B00;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1100;
+            cursor: pointer;
+            box-shadow: 0 18px 35px rgba(255, 140, 50, 0.35);
+            flex-direction: column;
+            gap: 6px;
+            padding: 14px;
+        }
+
+        .sidebar-toggle span {
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            display: block;
+            border-radius: 999px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .sidebar-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .sidebar-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .sidebar-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        body.sidebar-open {
+            overflow: hidden;
+        }
+
+        body.sidebar-open .sidebar-toggle {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .sidebar-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 54px;
+            height: 54px;
+            border-radius: 18px;
+            border: none;
+            background: #fff;
+            color: #000;
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2200;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+            cursor: pointer;
+        }
+
+        body.sidebar-open .sidebar-close {
+            display: flex;
+        }
+
+        .sidebar-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: #1B1464;
+            transform: translateX(-100%);
+            transition: var(--transition);
+            z-index: 1000;
+            padding: 40px 0;
+            box-shadow: 15px 0 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .sidebar-nav.active {
+            transform: translateX(0);
+        }
+
+        .sidebar-logo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-logo img {
+            width: 100px;
+            border-radius: 12px;
+        }
+
+        .sidebar-nav nav ul {
+            list-style: none;
+        }
+
+        .sidebar-nav nav li a {
+            display: block;
+            padding: 12px 30px;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 0 25px 25px 0;
+            transition: var(--transition);
+        }
+
+        .sidebar-nav nav li a.active,
+        .sidebar-nav nav li a:hover {
+            background: #FF6B00;
+            color: #fff;
+        }
+
+        .sidebar-nav .nav-cta {
+            background: #FF6B00;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 0 25px 25px 0;
+            box-shadow: 0 12px 24px rgba(255, 140, 50, 0.25);
+        }
+
+        .sidebar-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 900;
+        }
+
+        .sidebar-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hero {
+            padding:90px 0 40px;
+            text-align:center;
+            position:relative;
+            background:#fff;
+        }
+
+        .hero::after {
+            content:'';
+            position:absolute;
+            width:380px;
+            height:380px;
+            border-radius:50%;
+            background:radial-gradient(circle,rgba(255,140,50,0.15),transparent 70%);
+            filter:blur(30px);
+            top:-120px;
+            right:-80px;
+            z-index:0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            text-transform:uppercase;
+            letter-spacing:0.35em;
+            color:#FF8C32;
+            font-size:1rem;
+            margin-bottom:18px;
+            font-weight:600;
+        }
+
+        .hero h1 {
+            margin:15px 0;
+        }
+
+        .hero p {
+            margin-bottom:30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background:linear-gradient(135deg,#FF8C32,#FFAA5B);
+            color:#fff;
+            box-shadow:0 18px 35px rgba(255,140,50,0.3);
+        }
+
+        .btn-outline {
+            border:2px solid #1B1464;
+            color:#1B1464;
+            background:#fff;
+        }
+
+        .btn-outline:hover {
+            background:#1B1464;
+            color:#fff;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .cert-card {
+            background:#fff;
+            border-radius:24px;
+            border:1px solid rgba(0,0,0,0.08);
+            padding:28px;
+            box-shadow:0 18px 35px rgba(0,0,0,0.08);
+        }
+
+        .cert-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .cert-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .cert-card li {
+            display:flex;
+            gap:10px;
+            margin-bottom:10px;
+            color:#1B1464;
+            font-weight:600;
+        }
+        .cert-card li i{color:#FF8C32;}
+
+        .traceability {
+            padding:80px 0;
+            background:#f8f9ff;
+        }
+
+        .timeline {
+            border-radius:24px;
+            border:1px solid rgba(0,0,0,0.08);
+            padding:30px;
+            background:#fff;
+            box-shadow:0 12px 24px rgba(0,0,0,0.06);
+        }
+
+        .timeline-step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .timeline-step i {
+            font-size:26px;
+            color:#FF8C32;
+        }
+
+        .timeline-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-section {
+            padding:90px 0;
+            text-align:center;
+            background:#fff;
+        }
+
+        .cta-section p {
+            max-width:640px;
+            margin:0 auto 25px;
+        }
+
+        .footer {
+            background:#02081f;
+            padding:80px 0 40px;
+            color:#F7FAFF;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .footer-pattern {
+            position:absolute;
+            inset:0;
+            background:url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity:0.07;
+        }
+
+        .footer-content {
+            position:relative;
+            z-index:1;
+        }
+
+        .footer-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+            gap:30px;
+            margin-bottom:30px;
+        }
+
+        .footer-about p {
+            color:#F7FAFF;
+            opacity:0.8;
+        }
+
+        .footer-col a {
+            color:rgba(255,255,255,0.8);
+            transition:var(--transition);
+        }
+
+        .footer-col a:hover {
+            color:var(--orange);
+        }
+
+        .footer-logo img {
+            width:220px;
+            height:auto;
+        }
+
+        .footer-social {
+            display:flex;
+            gap:12px;
+            margin-top:15px;
+        }
+
+        .footer-social a {
+            color:#fff;
+            font-size:1.1rem;
+        }
+
+        .footer-bottom {
+            border-top:1px solid rgba(255,255,255,0.12);
+            text-align:center;
+            padding-top:20px;
+            color:#F7FAFF;
+            opacity:0.8;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="brand-banner">
+        <a href="index.html" class="brand-banner-logo" aria-label="Ir al inicio">
+            <img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Catering">
+        </a>
+    </div>
+
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú lateral">
+        <span></span><span></span><span></span>
+    </button>
+    <button class="sidebar-close" id="sidebarClose" aria-label="Cerrar menú lateral">×</button>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <aside class="sidebar-nav" id="sidebarNav">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="certificaciones.html" class="active">Certificaciones</a></li>
+                <li><a href="mision-vision-valores.html">Misión, Visión y Valores</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Certificaciones y estándares</p>
+            <h1>Procesos auditados y trazables de principio a fin</h1>
+            <p>Trabajamos bajo normativas ISO, planes APPCC/HACCP y auditorías internas permanentes. Garantizamos transparencia en todos los procesos.</p>
+            <div class="hero-buttons">
+                <a href="contacto.html" class="btn btn-primary">Contáctanos</a>
+                <a href="tel:+542646200114" class="btn btn-outline"><i class="fas fa-phone-alt"></i>&nbsp;(0264) 6200114</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="cert-grid">
+            <article class="cert-card">
+                <h3>ISO 9000 / ISO 9001</h3>
+                <p>Sistema de gestión de calidad certificado para toda la cadena de suministro.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Procedimientos documentados por etapa</li>
+                    <li><i class="fas fa-check-circle"></i>Indicadores de mejora continua</li>
+                    <li><i class="fas fa-check-circle"></i>Auditorías externas anuales</li>
+                </ul>
+            </article>
+
+            <article class="cert-card">
+                <h3>APPCC / HACCP</h3>
+                <p>Monitoreo crítico en puntos de cocción, transporte y servicio in situ.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Registros digitales de temperatura</li>
+                    <li><i class="fas fa-check-circle"></i>Equipos calibrados y verificados</li>
+                    <li><i class="fas fa-check-circle"></i>Capacitaciones mensuales</li>
+                </ul>
+            </article>
+
+            <article class="cert-card">
+                <h3>Certificaciones y Auditorías</h3>
+                <p>Nuestra empresa se somete periódicamente a auditorías internas y externas que garantizan el cumplimiento de normas y estándares de calidad e inocuidad.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="traceability">
+        <div class="container">
+            <div class="section-intro" style="text-align:center; margin-bottom: 40px;">
+                <h2>Ruta de control y respuesta</h2>
+                <p>Adaptamos cada menú y logística a cada empresa.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-step">
+                    <i class="fas fa-laptop"></i>
+                    <div>
+                        <h3>1. Transparencia en redes sociales</h3>
+                        <p>Mantenemos una presencia activa en redes sociales, donde compartimos novedades y acercamos a nuestros clientes y comunidad una visión transparente de nuestra empresa.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <i class="fas fa-vials"></i>
+                    <div>
+                        <h3>2. Auditorías internas y externas</h3>
+                        <p>Realizamos auditorías periódicas, tanto internas como externas, para garantizar el cumplimiento de los más altos estándares de calidad e inocuidad alimentaria. Estas revisiones refuerzan nuestro compromiso con la mejora continua y la transparencia.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h3>3. Respuesta eficaz y profesional</h3>
+                        <p>Equipo de calidad disponible para activar planes correctivos y comunicar a cada cliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Desea contactarnos?</h2>
+            <p>Estamos disponibles para responder sus consultas y brindarle atención personalizada.</p>
+            <div class="hero-buttons">
+                <a href="contacto.html" class="btn btn-primary">Contactar ahora</a>
+                <a href="mailto:adm.servifood@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i>&nbsp;adm.servifood@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-content container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Logo">
+                    </a>
+                    <p>Desde 1994 acompañamos a empresas de todo San Juan con soluciones integrales de alimentación corporativa.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/servifoodcatering" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/servifoodcatering/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/542646200114" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="servicios.html#empresarial">Catering Empresarial</a></li>
+                        <li><a href="servicios.html#industrial">Catering Industrial</a></li>
+                        <li><a href="servicios.html#eventos">Eventos Corporativos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Certificaciones</h3>
+                    <ul>
+                        <li>ISO 9000 / ISO 9001</li>
+                        <li>Programas APPCC / HACCP</li>
+                        <li>Ensayos de laboratorio certificados</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Saturnino Sarassa 357 Este</li>
+                        <li><i class="fas fa-phone-alt"></i> (0264) 6200114</li>
+                        <li><i class="fas fa-envelope"></i> adm.servifood@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Servi Food Catering. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/542646200114" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function initSidebarNav() {
+            const sidebar = document.getElementById('sidebarNav');
+            const toggle = document.getElementById('sidebarToggle');
+            let backdrop = document.getElementById('sidebarBackdrop');
+            const closeButton = document.getElementById('sidebarClose');
+            if (!sidebar || !toggle) return;
+            if (!backdrop) {
+                backdrop = document.createElement('div');
+                backdrop.id = 'sidebarBackdrop';
+                backdrop.className = 'sidebar-backdrop';
+                document.body.appendChild(backdrop);
+            }
+            const body = document.body;
+            const closeNav = () => {
+                sidebar.classList.remove('active');
+                toggle.classList.remove('active');
+                backdrop.classList.remove('active');
+                body.classList.remove('sidebar-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            };
+            const openNav = () => {
+                sidebar.classList.add('active');
+                toggle.classList.add('active');
+                backdrop.classList.add('active');
+                body.classList.add('sidebar-open');
+                toggle.setAttribute('aria-expanded', 'true');
+            };
+            const toggleNav = event => {
+                event.preventDefault();
+                if (sidebar.classList.contains('active')) {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            };
+            const closeWithEvent = event => {
+                event.preventDefault();
+                closeNav();
+            };
+            toggle.addEventListener('click', toggleNav);
+            backdrop.addEventListener('click', closeWithEvent);
+            if (closeButton) closeButton.addEventListener('click', closeWithEvent);
+            Array.from(sidebar.querySelectorAll('a')).forEach(link => link.addEventListener('click', closeNav));
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) {
+                    closeNav();
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initSidebarNav);
+    </script>
+</body>
+</html>
+

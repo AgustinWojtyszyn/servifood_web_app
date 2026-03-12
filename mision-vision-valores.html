@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Misión, visión, valores y política de calidad de Servi Food Catering. Compromiso con la innovación y la inocuidad alimentaria.">
+    <title>Misión, Visión y Valores | Servi Food Catering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-dark: #010924;
+            --blue-mid: #08143f;
+            --blue-card: #101f4e;
+            --orange: #FF8C32;
+            --orange-soft: #FFC58F;
+            --white: #F7FAFF;
+            --stroke: rgba(255, 255, 255, 0.08);
+            --shadow: 0 25px 55px rgba(0, 0, 0, 0.45);
+            --transition: all 0.3s ease;
+        }
+
+        * {margin:0;padding:0;box-sizing:border-box;}
+
+        body {
+            font-family:'Poppins',Arial,Helvetica,sans-serif;
+            background:#fff;
+            color:#222;
+            line-height:1.8;
+            overflow-x:hidden;
+        }
+
+        h1,h2,h3,h4 {
+            font-family:'Playfair Display',Georgia,serif;
+            color:#1B1464;
+            line-height:1.3;
+        }
+
+        h1{font-size:2.9rem;}
+        h2{font-size:2.3rem;}
+        h3{font-size:1.9rem;}
+
+        p {
+            color:#222;
+            font-size:1.35rem;
+            font-weight:500;
+        }
+
+        a {color:var(--orange);}
+        .container {max-width:1200px;margin:0 auto;padding:0 20px;}
+
+        .brand-banner {
+            width:100%;
+            background:linear-gradient(135deg,var(--blue-card),#142e74);
+            padding:18px 30px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            box-shadow:0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .brand-banner-logo{display:inline-flex;align-items:center;}
+        .brand-banner img {height:clamp(140px,20vw,220px);}
+
+        .sidebar-toggle {
+            position:fixed;
+            top:20px;
+            left:20px;
+            width:64px;
+            height:64px;
+            border-radius:18px;
+            border:none;
+            background:#FF6B00;
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:1100;
+            cursor:pointer;
+            box-shadow:0 18px 35px rgba(255,140,50,0.35);
+            flex-direction:column;
+            gap:6px;
+            padding:14px;
+        }
+
+        .sidebar-toggle span {width:100%;height:3px;background:#fff;display:block;border-radius:999px;transition:transform 0.2s ease,opacity 0.2s ease;}
+        .sidebar-toggle.active span:nth-child(1){transform:translateY(9px) rotate(45deg);}
+        .sidebar-toggle.active span:nth-child(2){opacity:0;}
+        .sidebar-toggle.active span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
+        body.sidebar-open .sidebar-toggle{opacity:0;pointer-events:none;}
+        .sidebar-close{position:fixed;top:20px;right:20px;width:54px;height:54px;border-radius:18px;border:none;background:#fff;color:#000;font-size:1.6rem;font-weight:700;display:none;align-items:center;justify-content:center;z-index:1600;box-shadow:0 12px 24px rgba(0,0,0,0.25);cursor:pointer;}
+        body.sidebar-open .sidebar-close{display:flex;}
+
+        .sidebar-nav {
+            position:fixed;
+            top:0;
+            left:0;
+            width:250px;
+            height:100vh;
+            background:#1B1464;
+            transform:translateX(-100%);
+            transition:var(--transition);
+            z-index:1000;
+            padding:40px 0;
+            box-shadow:15px 0 30px rgba(0,0,0,0.45);
+        }
+
+        .sidebar-nav.active{transform:translateX(0);}
+
+        .sidebar-logo{text-align:center;margin-bottom:25px;}
+        .sidebar-logo img{width:100px;border-radius:12px;}
+        .sidebar-nav nav ul{list-style:none;}
+        .sidebar-nav nav li a{display:block;padding:12px 30px;color:#fff;font-weight:600;border-radius:0 25px 25px 0;}
+        .sidebar-nav nav li a.active,.sidebar-nav nav li a:hover{background:#FF6B00;color:#fff;}
+        .sidebar-nav .nav-cta{background:#FF6B00;color:#fff;font-weight:700;border-radius:0 25px 25px 0;box-shadow:0 12px 24px rgba(255,140,50,0.25);}
+        .sidebar-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.55);opacity:0;visibility:hidden;transition:var(--transition);z-index:900;}
+        .sidebar-backdrop.active{opacity:1;visibility:visible;}
+
+        .hero{padding:90px 0 50px;text-align:center;background:#fff;}
+        .hero-grid{position:relative;z-index:1;display:flex;flex-direction:column;gap:30px;align-items:center;text-align:center;}
+        .hero-content{max-width:780px;}
+        .hero-eyebrow{text-transform:uppercase;letter-spacing:0.35em;font-size:1.1rem;color:#FF8C32;margin-bottom:18px;font-weight:600;}
+        .hero p{max-width:720px;margin:0 auto 30px;color:#222;}
+
+        .hero-buttons{display:flex;flex-direction:column;gap:15px;align-items:center;}
+        @media(min-width:768px){.hero-buttons{flex-direction:row;justify-content:center;}}
+
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:999px;font-weight:600;letter-spacing:0.08em;border:none;cursor:pointer;transition:var(--transition);}
+        .btn-primary{background:linear-gradient(135deg,#FF8C32,#FFAA5B);color:#fff;box-shadow:0 18px 35px rgba(255,140,50,0.3);}
+        .btn-outline{border:2px solid #1B1464;color:#1B1464;background:#fff;}
+        .btn-outline:hover{background:#1B1464;color:#fff;}
+
+        .principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:50px;}
+        .principle-card{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:24px;padding:28px;box-shadow:0 15px 30px rgba(0,0,0,0.08);}
+        .principle-card ul{list-style:none;margin-top:15px;}
+        .principle-card li{display:flex;gap:10px;margin-bottom:10px;color:#1B1464;font-weight:600;}
+        .principle-card li i{color:#FF8C32;margin-top:5px;}
+
+        .vision-section{padding:80px 0;background:#f8f9ff;}
+        .vision-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+        .vision-card{border-radius:24px;border:1px solid rgba(0,0,0,0.08);padding:28px;background:#fff;box-shadow:0 15px 30px rgba(0,0,0,0.08);}
+
+        .timeline{margin-top:50px;border-radius:24px;border:1px solid rgba(0,0,0,0.08);padding:30px;background:#fff;box-shadow:0 10px 20px rgba(0,0,0,0.05);}
+        .timeline-step{display:flex;gap:15px;margin-bottom:18px;align-items:flex-start;}
+        .timeline-step i{color:#FF8C32;font-size:22px;}
+        .timeline-step:last-child{margin-bottom:0;}
+
+        .cta-section{padding:90px 0;text-align:center;background:#fff;}
+        .cta-section p{max-width:640px;margin:0 auto 25px;color:#222;}
+
+        .footer{background:#02081f;padding:80px 0 40px;color:#F7FAFF;position:relative;overflow:hidden;}
+        .footer-pattern{position:absolute;inset:0;background:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.07;}
+        .footer-content{position:relative;z-index:1;}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px;margin-bottom:30px;}
+        .footer-about p{color:#F7FAFF;opacity:0.8;}
+        .footer-col a{color:rgba(255,255,255,0.8);transition:var(--transition);}
+        .footer-col a:hover{color:var(--orange);}
+        .footer-logo img{width:220px;height:auto;}
+        .footer-social{display:flex;gap:12px;margin-top:15px;}
+        .footer-social a{color:#fff;font-size:1.1rem;}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.12);text-align:center;padding-top:20px;color:#F7FAFF;opacity:0.8;}
+
+        .whatsapp-float{position:fixed;bottom:30px;right:30px;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 20px 35px rgba(0,0,0,0.3);}
+    </style>
+</head>
+<body>
+    <div class="brand-banner">
+        <a href="index.html" class="brand-banner-logo" aria-label="Ir al inicio">
+            <img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Catering">
+        </a>
+    </div>
+
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú lateral">
+        <span></span><span></span><span></span>
+    </button>
+    <button class="sidebar-close" id="sidebarClose" aria-label="Cerrar menú lateral">×</button>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <aside class="sidebar-nav" id="sidebarNav">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="certificaciones.html">Certificaciones</a></li>
+                <li><a href="mision-vision-valores.html" class="active">Misión, Visión y Valores</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Propósito</p>
+                <h1>Transformamos la alimentación corporativa en una experiencia confiable, saludable e innovadora</h1>
+                <p>Guiamos nuestros procesos por principios claros, auditables y centrados en las personas. Así acompañamos el crecimiento de cada cliente.</p>
+                <div class="hero-buttons">
+                    <a href="contacto.html" class="btn btn-primary">Solicitar política completa</a>
+                    <a href="mailto:adm.servifood@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i>&nbsp;adm.servifood@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="principles-grid">
+            <article class="principle-card">
+                <h3>Misión</h3>
+                <p>Brindar soluciones de alimentación colectiva que integren inocuidad, nutrición y servicio personalizado para cada industria.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i>Menús diseñados por nutricionistas</li>
+                    <li><i class="fas fa-check"></i>Operaciones con trazabilidad digital</li>
+                    <li><i class="fas fa-check"></i>Respuesta ágil ante contingencias</li>
+                </ul>
+            </article>
+            <article class="principle-card">
+                <h3>Visión</h3>
+                <p>Ser el socio estratégico de alimentación corporativa más confiable de la provincia liderando en innovación y sustentabilidad.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i>Centro productivo de vanguardia</li>
+                    <li><i class="fas fa-check"></i>Alianzas con proveedores regionales</li>
+                    <li><i class="fas fa-check"></i>Tecnología aplicada a la gestión</li>
+                </ul>
+            </article>
+            <article class="principle-card">
+                <h3>Valores</h3>
+                <p>Lo que define nuestra cultura interna y externa.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i>Profesionalismo y ética</li>
+                    <li><i class="fas fa-check"></i>Innovación permanente</li>
+                    <li><i class="fas fa-check"></i>Orientación al cliente</li>
+                    <li><i class="fas fa-check"></i>Sustentabilidad real</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section class="vision-section">
+        <div class="container">
+            <div class="section-intro" style="text-align:center;margin-bottom:40px;">
+                <h2>Política de calidad e inocuidad</h2>
+                <p>Compromisos medibles que atraviesan toda nuestra operación.</p>
+            </div>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <h3>Foco en nuestros clientes</h3>
+                    <p>Personalizamos cada propuesta y operación según las necesidades de cada empresa.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Capital humano</h3>
+                    <p>Invertimos en capacitación, bienestar y desarrollo profesional de nuestros equipos.</p>
+                </div>
+                <div class="vision-card">
+                    <h3>Mejora continua</h3>
+                    <p>Indicadores, auditorías y análisis de datos que alimentan nuevas soluciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Desea más información?</h2>
+            <p>Compartimos manuales, certificaciones y paneles de control para garantizar transparencia total.</p>
+            <div class="hero-buttons">
+                <a href="contacto.html" class="btn btn-primary">Solicitar reunión</a>
+                <a href="tel:+542646200114" class="btn btn-outline"><i class="fas fa-phone-alt"></i>&nbsp;(0264) 6200114</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-content container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Logo">
+                    </a>
+                    <p>Desde 1994 acompañamos a empresas de todo San Juan con soluciones integrales de alimentación corporativa.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/servifoodcatering" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/servifoodcatering/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/542646200114" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="servicios.html#empresarial">Catering Empresarial</a></li>
+                        <li><a href="servicios.html#industrial">Catering Industrial</a></li>
+                        <li><a href="servicios.html#eventos">Organización de Eventos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Certificaciones</h3>
+                    <ul>
+                        <li><a href="certificaciones.html">ISO 9000 / 9001</a></li>
+                        <li><a href="certificaciones.html">Programas APPCC / HACCP</a></li>
+                        <li><a href="certificaciones.html">Ensayos de laboratorio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Saturnino Sarassa 357 Este</li>
+                        <li><i class="fas fa-phone-alt"></i> (0264) 6200114</li>
+                        <li><i class="fas fa-envelope"></i> adm.servifood@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Servi Food Catering. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/542646200114" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function initSidebarNav() {
+            const sidebar = document.getElementById('sidebarNav');
+            const toggle = document.getElementById('sidebarToggle');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            const closeButton = document.getElementById('sidebarClose');
+            if (!sidebar || !toggle || !backdrop) return;
+            const body = document.body;
+
+            const closeNav = () => {
+                sidebar.classList.remove('active');
+                toggle.classList.remove('active');
+                backdrop.classList.remove('active');
+                body.classList.remove('sidebar-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            };
+
+            const openNav = () => {
+                sidebar.classList.add('active');
+                toggle.classList.add('active');
+                backdrop.classList.add('active');
+                body.classList.add('sidebar-open');
+                toggle.setAttribute('aria-expanded', 'true');
+            };
+
+            const toggleNav = () => {
+                if (sidebar.classList.contains('active')) {
+                    closeNav();
+                } else {
+                    openNav();
+                }
+            };
+
+            toggle.addEventListener('click', toggleNav);
+            backdrop.addEventListener('click', closeNav);
+            if (closeButton) closeButton.addEventListener('click', closeNav);
+            sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) {
+                    closeNav();
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initSidebarNav);
+    </script>
+</body>
+</html>
+

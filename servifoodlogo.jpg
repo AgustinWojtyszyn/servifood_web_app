@@ -1,0 +1,11 @@
+// Simple cache-busting helper so references don't 404.
+(function(){
+  const version = Date.now();
+  document.querySelectorAll('link[rel=\"stylesheet\"][data-anticache], script[src][data-anticache]').forEach(el => {
+    const attr = el.tagName === 'LINK' ? 'href' : 'src';
+    const url = new URL(el.getAttribute(attr), window.location.href);
+    url.searchParams.set('v', version);
+    el.setAttribute(attr, url.pathname + '?' + url.searchParams.toString());
+  });
+  console.debug('anticache loaded');
+})();

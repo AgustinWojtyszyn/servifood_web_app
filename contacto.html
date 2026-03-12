@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Póngase en contacto con Servi Food Catering. Teléfono, dirección y correo para coordinar proyectos gastronómicos corporativos.">
+    <title>Contacto | Servi Food Catering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-dark: #010924;
+            --blue-mid: #061540;
+            --blue-card: #101f4e;
+            --blue-highlight: #132d73;
+            --blue-stroke: rgba(255, 255, 255, 0.08);
+            --orange-bright: #FF8C32;
+            --orange-soft: #FFC58F;
+            --white-soft: #F7FAFF;
+            --shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+            --transition: all 0.35s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family:'Poppins',Arial,Helvetica,sans-serif;
+            background:#fff;
+            color:#222;
+            line-height:1.8;
+            overflow-x:hidden;
+        }
+
+        h1,h2,h3,h4 {
+            font-family:'Playfair Display',Georgia,serif;
+            color:#1B1464;
+            line-height:1.3;
+        }
+
+        h1{font-size:clamp(2.8rem,4.5vw,4.2rem);}
+        h2{font-size:2.4rem;}
+        h3{font-size:1.9rem;}
+
+        p {
+            color:#222;
+            font-size:1.25rem;
+            font-weight:500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .brand-banner {
+            width: 100%;
+            background: linear-gradient(135deg, var(--blue-card), var(--blue-highlight));
+            padding: 18px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            z-index: 1500;
+            position: relative;
+        }
+
+        .brand-banner-logo img {
+            height: clamp(140px, 18vw, 210px);
+            width: auto;
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            border: none;
+            background: #FF6B00;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(255,107,0,0.35);
+            z-index: 1600;
+            padding: 14px;
+        }
+
+        .sidebar-toggle span {
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            border-radius: 999px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .sidebar-toggle.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .sidebar-toggle.active span:nth-child(2) { opacity: 0; }
+        .sidebar-toggle.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+        body.sidebar-open .sidebar-toggle { opacity: 0; pointer-events: none; }
+        .sidebar-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 54px;
+            height: 54px;
+            border-radius: 18px;
+            border: none;
+            background: #fff;
+            color: #000;
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+            z-index: 1700;
+        }
+        body.sidebar-open .sidebar-close { display: flex; }
+
+        body.sidebar-open {
+            overflow: hidden;
+        }
+
+        .sidebar-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: #1B1464;
+            transform: translateX(-100%);
+            transition: var(--transition);
+            z-index: 1500;
+            padding: 40px 0;
+            box-shadow: 15px 0 30px rgba(0,0,0,0.45);
+        }
+
+        .sidebar-nav.active { transform: translateX(0); }
+
+        .sidebar-logo { text-align: center; margin-bottom: 25px; }
+        .sidebar-logo img { width: 100px; border-radius: 12px; }
+
+        .sidebar-nav nav ul { list-style: none; }
+        .sidebar-nav nav li a {
+            display: block;
+            padding: 12px 30px;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 0 25px 25px 0;
+            transition: background 0.2s, color 0.2s;
+        }
+        .sidebar-nav nav li a.active,
+        .sidebar-nav nav li a:hover { background: #FF6B00; color: #fff; }
+        .sidebar-nav .nav-cta {
+            background: #FF6B00;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 0 25px 25px 0;
+            box-shadow: 0 12px 24px rgba(255,140,50,0.25);
+        }
+
+        .sidebar-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1400;
+        }
+        .sidebar-backdrop.active { opacity: 1; visibility: visible; }
+
+        .hero {
+            padding:100px 0 60px;
+            text-align:center;
+            position:relative;
+            background:#fff;
+        }
+
+        .hero-content {
+            max-width:780px;
+            margin:0 auto;
+        }
+
+        .hero-eyebrow {
+            text-transform:uppercase;
+            letter-spacing:0.35em;
+            font-size:1rem;
+            color:#FF8C32;
+            margin-bottom:18px;
+            font-weight:600;
+        }
+
+        .hero-title {
+            margin-bottom:20px;
+        }
+
+        .hero-subtitle {
+            font-size:1.35rem;
+            margin-bottom:40px;
+        }
+
+        .contact-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:25px;
+            margin-top:40px;
+        }
+
+        .contact-card {
+            background:#fff;
+            border-radius:22px;
+            border:1px solid rgba(0,0,0,0.08);
+            padding:28px;
+            box-shadow:0 20px 45px rgba(0,0,0,0.08);
+            text-align:left;
+        }
+
+        .contact-card h3 { margin-bottom: 12px; color:#1B1464; }
+        .contact-card p { margin-bottom: 10px; }
+        .contact-card a { color:#1B1464; text-decoration:none; font-weight:600; }
+        .contact-card i { margin-right:8px; color:#FF8C32; }
+
+        .info-section {
+            padding:90px 0;
+            background:#f8f9ff;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .info-panel {
+            background:#fff;
+            border-radius:24px;
+            border:1px solid rgba(0,0,0,0.08);
+            padding:30px;
+            box-shadow:0 20px 45px rgba(0,0,0,0.08);
+        }
+
+        .map-panel iframe {
+            width: 100%;
+            height: 320px;
+            border: none;
+            border-radius: 18px;
+        }
+
+        .cta-section {
+            padding:80px 0;
+            text-align:center;
+            background:#fff;
+        }
+
+        .cta-buttons {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-buttons { flex-direction: row; justify-content: center; }
+        }
+
+        .btn {
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            padding:14px 32px;
+            border-radius:999px;
+            font-weight:600;
+            letter-spacing:0.08em;
+            border:none;
+            cursor:pointer;
+            transition:var(--transition);
+        }
+
+        .btn-primary {
+            background:linear-gradient(135deg,#FF8C32,#FFAA5B);
+            color:#fff;
+            box-shadow:0 20px 40px rgba(255,140,50,0.3);
+        }
+
+        .btn-outline {
+            border:2px solid #1B1464;
+            color:#1B1464;
+            background:#fff;
+        }
+        .btn-outline:hover { background:#1B1464; color:#fff; }
+
+        .footer {
+            background:#02081f;
+            padding:80px 0 40px;
+            color:#F7FAFF;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .footer-pattern {
+            position:absolute;
+            inset:0;
+            background:url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity:0.07;
+        }
+
+        .footer-content {
+            position:relative;
+            z-index:1;
+        }
+
+        .footer-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+            gap:30px;
+            margin-bottom:30px;
+        }
+
+        .footer-about p {
+            color:#F7FAFF;
+            opacity:0.8;
+        }
+
+        .footer-col a {
+            color:rgba(255,255,255,0.8);
+            transition:var(--transition);
+        }
+
+        .footer-col a:hover {
+            color:var(--orange-bright);
+        }
+
+        .footer-logo img {
+            width:220px;
+            height:auto;
+        }
+
+        .footer-social {
+            display:flex;
+            gap:12px;
+            margin-top:15px;
+        }
+
+        .footer-social a {
+            color:#fff;
+            font-size:1.1rem;
+        }
+
+        .footer-bottom {
+            border-top:1px solid rgba(255,255,255,0.12);
+            text-align:center;
+            padding-top:20px;
+            color:#F7FAFF;
+            opacity:0.8;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-size: 28px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="brand-banner">
+        <a href="index.html" class="brand-banner-logo" aria-label="Ir al inicio">
+            <img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Catering">
+        </a>
+    </div>
+
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú lateral">
+        <span></span><span></span><span></span>
+    </button>
+    <button class="sidebar-close" id="sidebarClose" aria-label="Cerrar menú lateral">×</button>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <aside class="sidebar-nav" id="sidebarNav">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+				<li><a href="servicios.html">Servicios</a></li>
+                <li><a href="certificaciones.html">Certificaciones</a></li>
+                <li><a href="mision-vision-valores.html">Misión, Visión y Valores</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <p class="hero-eyebrow">Contacto directo</p>
+            <h1 class="hero-title">Hable con nuestro equipo</h1>
+            <p class="hero-subtitle">Coordinamos visitas técnicas, licitaciones y emergencias 24/7. Seleccione el canal que prefiera para recibir respuesta inmediata.</p>
+
+            <div class="contact-grid">
+                <article class="contact-card">
+                    <h3><i class="fas fa-phone-alt"></i> Teléfono</h3>
+                    <p>Lunes a viernes 08:00 - 18:00 hs</p>
+                    <a href="tel:+542646200114" class="btn btn-primary" style="width:100%;justify-content:center;">(0264) 6200114</a>
+                </article>
+                <article class="contact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Ubicación</h3>
+                    <div style="width:100%;height:180px;overflow:hidden;border-radius:12px;margin-bottom:8px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1702920000!6m8!1m7!1smuJKyccVpJQvAm2cCYNHmA!2m2!1d-31.5524332!2d-68.5179741!3f127.2235434499036!4f81.59999999999999!5f0.7820865974627469" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Street View Servi Food"></iframe>
+                    </div>
+                    <p>Saturnino Sarassa 357 Este<br>(esquina Abraham Tapia)</p>
+                </article>
+                <article class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> Correo electrónico</h3>
+                    <p>Envíe requerimientos técnicos, licitaciones o CV.</p>
+                    <a href="mailto:servifood@infovia.com.ar">servifood@infovia.com.ar</a>
+                </article>
+            </div>
+        </div>
+    </header>
+
+    <section class="info-section">
+        <div class="container info-grid">
+            <div class="info-panel">
+                <h2>Atención operativa y comercial</h2>
+				<p>La atención para empresas se brinda exclusivamente en horario laboral, de 8:30 a 17:30. Trabajamos con protocolos claros y canales de comunicación directos para responder requerimientos técnicos en tiempo y forma.</p>
+                <ul style="list-style:none;margin-top:20px;padding:0;">
+                    <li style="margin-bottom:12px;"><i class="fas fa-user-tie" style="color:var(--orange-bright);margin-right:8px;"></i> Responsable asignado por proyecto</li>
+                    <li style="margin-bottom:12px;"><i class="fas fa-clock" style="color:var(--orange-bright);margin-right:8px;"></i> Horario de atención: 8:30 a 17:30</li>
+                    <li style="margin-bottom:12px;"><i class="fas fa-clipboard-check" style="color:var(--orange-bright);margin-right:8px;"></i> Protocolos documentados para cada servicio</li>
+                </ul>
+            </div>
+            <div class="info-panel map-panel">
+                <h2>Visítenos</h2>
+                <iframe src="https://www.google.com/maps?q=Saturnino+Sarassa+381+Este,+San+Juan,+Argentina&output=embed" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Servi Food"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="footer-content container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/image/servifood_logo_white_text_HQ.png" alt="Servi Food Logo">
+                    </a>
+                    <p>Desde 1994 acompañamos a empresas de todo San Juan con soluciones integrales de alimentación corporativa.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/servifoodcatering" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/servifoodcatering/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/542646200114" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Servicios</h3>
+                    <ul>
+						<li><a href="servicios.html#empresarial">Catering Empresarial</a></li>
+						<li><a href="servicios.html#industrial">Catering Industrial</a></li>
+						<li><a href="servicios.html#eventos">Eventos Corporativos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="mision-vision-valores.html">Misión, Visión y Valores</a></li>
+                        <li><a href="certificaciones.html">Certificaciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Saturnino Sarassa 357 Este</li>
+                        <li><i class="fas fa-phone-alt"></i> (0264) 6200114</li>
+                        <li><i class="fas fa-envelope"></i> servifood@infovia.com.ar</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Servi Food Catering. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/542646200114" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function initSidebarNav() {
+            const sidebar = document.getElementById('sidebarNav');
+            const toggle = document.getElementById('sidebarToggle');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            const closeButton = document.getElementById('sidebarClose');
+            if (!sidebar || !toggle || !backdrop) return;
+            const body = document.body;
+
+            const closeNav = () => {
+                sidebar.classList.remove('active');
+                toggle.classList.remove('active');
+                backdrop.classList.remove('active');
+                body.classList.remove('sidebar-open');
+                toggle.setAttribute('aria-expanded', 'false');
+            };
+
+            const openNav = () => {
+                sidebar.classList.add('active');
+                toggle.classList.add('active');
+                backdrop.classList.add('active');
+                body.classList.add('sidebar-open');
+                toggle.setAttribute('aria-expanded', 'true');
+            };
+
+            const toggleNav = () => {
+                sidebar.classList.contains('active') ? closeNav() : openNav();
+            };
+
+            toggle.addEventListener('click', toggleNav);
+            backdrop.addEventListener('click', closeNav);
+            if (closeButton) closeButton.addEventListener('click', closeNav);
+            sidebar.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeNav();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initSidebarNav);
+    </script>
+</body>
+</html>
+
+
