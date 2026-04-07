@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Certificaciones y estándares de Servi Food Catering. ISO 9000, ISO 9001 y sistemas APPCC/HACCP para garantizar inocuidad total.">
-    <title>Certificaciones | Servi Food Catering</title>
+    <meta name="description" content="Marco normativo de Servi Food. Certificaciones ISO 9001 y HACCP que garantizan inocuidad, trazabilidad y calidad documentada en cada contrato de alimentación institucional.">
+    <title>Certificaciones | Servi Food — Servicios de Alimentación Institucional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,13 +44,13 @@
         }
 
         h1{font-size:clamp(2.5rem,4.8vw,4rem);}
-        h2{font-size:2.4rem;}
-        h3{font-size:1.9rem;}
+        h2{font-size:clamp(1.8rem,3vw,2.4rem);}
+        h3{font-size:1.2rem;}
 
         p {
             color:#222;
-            font-size:1.28rem;
-            font-weight:500;
+            font-size:1rem;
+            font-weight:400;
         }
 
         a {
@@ -276,6 +276,9 @@
 
         .hero p {
             margin-bottom:30px;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #333;
         }
 
         .hero-buttons {
@@ -339,21 +342,31 @@
 
         .cert-card h3 {
             margin-bottom: 10px;
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+
+        .cert-card p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 0;
         }
 
         .cert-card ul {
             list-style: none;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         .cert-card li {
             display:flex;
-            gap:10px;
-            margin-bottom:10px;
+            gap:8px;
+            margin-bottom:8px;
             color:#1B1464;
-            font-weight:600;
+            font-weight:500;
+            font-size: 0.9rem;
+            align-items: flex-start;
         }
-        .cert-card li i{color:#FF8C32;}
+        .cert-card li i{color:#FF8C32; margin-top:3px; flex-shrink:0;}
 
         .traceability {
             padding:80px 0;
@@ -371,17 +384,108 @@
         .timeline-step {
             display: flex;
             gap: 20px;
-            margin-bottom: 20px;
-            align-items: center;
+            margin-bottom: 24px;
+            align-items: flex-start;
         }
 
         .timeline-step i {
-            font-size:26px;
+            font-size:22px;
             color:#FF8C32;
+            margin-top: 4px;
+            flex-shrink: 0;
         }
 
-        .timeline-step:last-child {
-            margin-bottom: 0;
+        .timeline-step h3 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .timeline-step p {
+            font-size: 0.93rem;
+            color: #444;
+        }
+
+        .cert-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .cert-gallery-item {
+            width: 100%;
+            max-width: 320px;
+            height: 220px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+            background: #f4f6fb;
+        }
+
+        .cert-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            padding: 16px;
+        }
+
+        .cert-docs {
+            display: grid;
+            gap: 14px;
+            padding: 18px;
+            background: linear-gradient(180deg, #f7f9fe 0%, #eef3fb 100%);
+        }
+
+        .cert-doc {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 84px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            border: 1px solid rgba(27, 20, 100, 0.12);
+            background: #fff;
+            box-shadow: 0 10px 22px rgba(16, 31, 78, 0.08);
+        }
+
+        .cert-doc-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #6b7280;
+        }
+
+        .cert-doc-title {
+            font-family:'Playfair Display',Georgia,serif;
+            font-size: 1.1rem;
+            line-height: 1.2;
+            color: #1B1464;
+        }
+
+        .cert-doc-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.78rem;
+            color: #4b5563;
+        }
+
+        .cert-doc-seal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FF8C32, #FFB36B);
+            color: #fff;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 18px rgba(255, 140, 50, 0.28);
         }
 
         .cta-section {
@@ -479,7 +583,7 @@
 <body>
     <div class="brand-banner">
         <a href="index.html" class="brand-banner-logo" aria-label="Ir al inicio">
-            <img src="assets/images/servifood_logo_white_text_HQ.png" alt="Servi Food Catering">
+            <img src="assets/images/servifood_logo_white_text_HQ.png" alt="Servi Food — Servicios de Alimentación Institucional">
         </a>
     </div>
 
@@ -507,41 +611,52 @@
 
     <header class="hero">
         <div class="hero-content">
-            <p class="hero-eyebrow">Certificaciones y estándares</p>
-            <h1>Procesos auditados y trazables de principio a fin</h1>
-            <p>Trabajamos bajo normativas ISO, planes APPCC/HACCP y auditorías internas permanentes. Garantizamos transparencia en todos los procesos.</p>
+            <p class="hero-eyebrow">Marco normativo vigente</p>
+            <h1>Las certificaciones que respaldan cada contrato de servicio</h1>
+            <p>Nuestras certificaciones no son solo credenciales; son la garantía de que su organización recibe un servicio documentado, auditable y conforme a normativa sanitaria vigente.</p>
             <div class="hero-buttons">
-                <a href="contacto.html" class="btn btn-primary">Contáctanos</a>
+                <a href="contacto.html" class="btn btn-primary">Solicitar documentación técnica</a>
                 <a href="tel:+542646200114" class="btn btn-outline"><i class="fas fa-phone-alt"></i>&nbsp;(0264) 6200114</a>
             </div>
         </div>
     </header>
 
-    <section class="container">
+    <section style="padding: 70px 0;" class="container">
         <div class="cert-grid">
             <article class="cert-card">
-                <h3>ISO 9000 / ISO 9001</h3>
-                <p>Sistema de gestión de calidad certificado para toda la cadena de suministro.</p>
+                <h3><i class="fas fa-certificate" style="color:var(--orange);margin-right:10px;"></i>ISO 9001</h3>
+                <p>Sistema de gestión de calidad certificado para toda la operación. Garantiza procesos documentados, responsables definidos y revisión periódica.</p>
                 <ul>
-                    <li><i class="fas fa-check-circle"></i>Procedimientos documentados por etapa</li>
-                    <li><i class="fas fa-check-circle"></i>Indicadores de mejora continua</li>
-                    <li><i class="fas fa-check-circle"></i>Auditorías externas anuales</li>
+                    <li><i class="fas fa-check-circle"></i>Procedimientos documentados por etapa operativa</li>
+                    <li><i class="fas fa-check-circle"></i>Indicadores medibles de calidad y cumplimiento</li>
+                    <li><i class="fas fa-check-circle"></i>Auditorías externas anuales con resultado verificable</li>
+                    <li><i class="fas fa-check-circle"></i>Trazabilidad total del servicio contratado</li>
                 </ul>
+                <p style="margin-top:14px;font-size:1rem;color:#555;"><strong>Para su organización:</strong> puede exigir registros y reportes de calidad en cualquier momento del contrato.</p>
             </article>
 
             <article class="cert-card">
-                <h3>APPCC / HACCP</h3>
-                <p>Monitoreo crítico en puntos de cocción, transporte y servicio in situ.</p>
+                <h3><i class="fas fa-shield-alt" style="color:var(--orange);margin-right:10px;"></i>HACCP / APPCC</h3>
+                <p>Plan de análisis de peligros y puntos críticos de control. Cubre toda la cadena: recepción de materias primas, producción, transporte y servicio in situ.</p>
                 <ul>
-                    <li><i class="fas fa-check-circle"></i>Registros digitales de temperatura</li>
-                    <li><i class="fas fa-check-circle"></i>Equipos calibrados y verificados</li>
-                    <li><i class="fas fa-check-circle"></i>Capacitaciones mensuales</li>
+                    <li><i class="fas fa-check-circle"></i>Registros de temperatura en cada punto crítico</li>
+                    <li><i class="fas fa-check-circle"></i>Equipos calibrados y verificados periódicamente</li>
+                    <li><i class="fas fa-check-circle"></i>Capacitaciones obligatorias para todo el personal</li>
+                    <li><i class="fas fa-check-circle"></i>Planes de contingencia documentados ante desvíos</li>
                 </ul>
+                <p style="margin-top:14px;font-size:1rem;color:#555;"><strong>Para su organización:</strong> mitiga riesgos sanitarios y cumple exigencias de organismos regulatorios.</p>
             </article>
 
             <article class="cert-card">
-                <h3>Certificaciones y Auditorías</h3>
-                <p>Nuestra empresa se somete periódicamente a auditorías internas y externas que garantizan el cumplimiento de normas y estándares de calidad e inocuidad.</p>
+                <h3><i class="fas fa-clipboard-list" style="color:var(--orange);margin-right:10px;"></i>Buenas Prácticas de Manufactura (BPM)</h3>
+                <p>Normas operativas que regulan instalaciones, higiene del personal, almacenamiento y manipulación. Base del sistema de inocuidad.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Personal con formación y habilitación sanitaria vigente</li>
+                    <li><i class="fas fa-check-circle"></i>Planta propia con habilitación municipal y provincial</li>
+                    <li><i class="fas fa-check-circle"></i>Cadena de frío controlada desde origen hasta destino</li>
+                    <li><i class="fas fa-check-circle"></i>Limpieza y desinfección documentada por turno</li>
+                </ul>
+                <p style="margin-top:14px;font-size:1rem;color:#555;"><strong>Para su organización:</strong> garantía de que el proveedor opera bajo estándares auditables en terreno.</p>
             </article>
         </div>
     </section>
@@ -549,31 +664,77 @@
     <section class="traceability">
         <div class="container">
             <div class="section-intro" style="text-align:center; margin-bottom: 40px;">
-                <h2>Ruta de control y respuesta</h2>
-                <p>Adaptamos cada menú y logística a cada empresa.</p>
+                <h2>Lo que su organización puede exigir y verificar</h2>
+                <p>Nuestro sistema normativo está diseñado para ser transparente frente al cliente. Estos son los controles que operamos en cada contrato.</p>
             </div>
 
             <div class="timeline">
                 <div class="timeline-step">
-                    <i class="fas fa-laptop"></i>
+                    <i class="fas fa-search"></i>
                     <div>
-                        <h3>1. Transparencia en redes sociales</h3>
-                        <p>Mantenemos una presencia activa en redes sociales, donde compartimos novedades y acercamos a nuestros clientes y comunidad una visión transparente de nuestra empresa.</p>
+                        <h3>1. Control en recepción de insumos</h3>
+                        <p>Cada materia prima ingresa con verificación de temperatura, fecha de vencimiento, proveedor habilitado y registro documental. Sin excepción.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <i class="fas fa-thermometer-half"></i>
+                    <div>
+                        <h3>2. Monitoreo de puntos críticos</h3>
+                        <p>Cocción, enfriamiento y transporte controlados con registros digitales. Los desvíos activan planes de acción documentados antes de que el producto llegue al destino.</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                    <i class="fas fa-truck"></i>
+                    <div>
+                        <h3>3. Logística con cadena de frío garantizada</h3>
+                        <p>Vehículos propios refrigerados, rutas planificadas y registros de temperatura en tránsito disponibles para auditoría del cliente en todo momento.</p>
                     </div>
                 </div>
                 <div class="timeline-step">
                     <i class="fas fa-vials"></i>
                     <div>
-                        <h3>2. Auditorías internas y externas</h3>
-                        <p>Realizamos auditorías periódicas, tanto internas como externas, para garantizar el cumplimiento de los más altos estándares de calidad e inocuidad alimentaria. Estas revisiones refuerzan nuestro compromiso con la mejora continua y la transparencia.</p>
+                        <h3>4. Auditorías internas y externas periódicas</h3>
+                        <p>Revisiones programadas bajo norma ISO 9001 y HACCP. Los resultados están disponibles como respaldo ante organismos regulatorios o auditorías propias del cliente.</p>
                     </div>
                 </div>
                 <div class="timeline-step">
-                    <i class="fas fa-headset"></i>
+                    <i class="fas fa-file-alt"></i>
                     <div>
-                        <h3>3. Respuesta eficaz y profesional</h3>
-                        <p>Equipo de calidad disponible para activar planes correctivos y comunicar a cada cliente.</p>
+                        <h3>5. Reportes contractuales al cliente</h3>
+                        <p>Informes periódicos de cumplimiento, incidencias y acciones correctivas. Transparencia total como parte del servicio, no como excepción.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding:80px 0;background:#fff;">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:40px;">
+                <h2>Evidencia de nuestra operación certificada</h2>
+                <p>Instalaciones propias auditadas, personal habilitado y procesos documentados.</p>
+            </div>
+            <div class="cert-gallery">
+                <div class="cert-gallery-item">
+                    <img src="assets/images/certificaciones1.jpg" alt="Planta de producci?n Servi Food ? instalaciones certificadas">
+                </div>
+                <div class="cert-gallery-item cert-docs" aria-label="Certificaciones HACCP e ISO 9000">
+                    <article class="cert-doc">
+                        <span class="cert-doc-label">Seguridad alimentaria</span>
+                        <strong class="cert-doc-title">HACCP</strong>
+                        <div class="cert-doc-meta">
+                            <span>An?lisis de peligros y puntos cr?ticos</span>
+                            <span class="cert-doc-seal"><i class="fas fa-shield-alt"></i></span>
+                        </div>
+                    </article>
+                    <article class="cert-doc">
+                        <span class="cert-doc-label">Gesti?n de calidad</span>
+                        <strong class="cert-doc-title">ISO 9000</strong>
+                        <div class="cert-doc-meta">
+                            <span>Procesos documentados y auditables</span>
+                            <span class="cert-doc-seal"><i class="fas fa-certificate"></i></span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -581,10 +742,10 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2>¿Desea contactarnos?</h2>
-            <p>Estamos disponibles para responder sus consultas y brindarle atención personalizada.</p>
+            <h2>Solicite nuestra documentación técnica</h2>
+            <p>Podemos enviarle los certificados vigentes, fichas técnicas y registros de auditoría como parte del proceso de evaluación de proveedores de su organización.</p>
             <div class="hero-buttons">
-                <a href="contacto.html" class="btn btn-primary">Contactar ahora</a>
+                <a href="contacto.html" class="btn btn-primary">Solicitar documentación técnica</a>
                 <a href="mailto:adm.servifood@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i>&nbsp;adm.servifood@gmail.com</a>
             </div>
         </div>
@@ -598,7 +759,7 @@
                     <a href="index.html" class="footer-logo">
                         <img src="assets/images/servifood_logo_white_text_HQ.png" alt="Servi Food Logo">
                     </a>
-                    <p>Desde 1994 acompañamos a empresas de todo San Juan con soluciones integrales de alimentación corporativa.</p>
+                    <p>Desde 1994 gestionamos servicios de alimentación para empresas, industrias y proyectos en San Juan. Procesos certificados y personal propio.</p>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/servifoodcatering" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/servifoodcatering/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -608,17 +769,18 @@
                 <div class="footer-col">
                     <h3>Servicios</h3>
                     <ul>
-                        <li><a href="servicios.html#empresarial">Catering Empresarial</a></li>
-                        <li><a href="servicios.html#industrial">Catering Industrial</a></li>
-                        <li><a href="servicios.html#eventos">Eventos Corporativos</a></li>
+                        <li><a href="servicios.html#industrial">Alimentación industrial</a></li>
+                        <li><a href="servicios.html#corporativo">Alimentación corporativa</a></li>
+                        <li><a href="servicios.html#obra">Alimentación en obra</a></li>
+                        <li><a href="servicios.html#eventos">Eventos institucionales</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Certificaciones</h3>
                     <ul>
-                        <li>ISO 9000 / ISO 9001</li>
-                        <li>Programas APPCC / HACCP</li>
-                        <li>Ensayos de laboratorio certificados</li>
+                        <li>ISO 9001 — Gestión de calidad</li>
+                        <li>HACCP / APPCC — Inocuidad alimentaria</li>
+                        <li>BPM — Buenas Prácticas de Manufactura</li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -631,7 +793,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Servi Food Catering. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Servi Food. Servicios de Alimentación Institucional. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -694,4 +856,3 @@
     </script>
 </body>
 </html>
-

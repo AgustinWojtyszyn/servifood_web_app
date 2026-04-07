@@ -46,33 +46,17 @@
 
         var featureCards = gsap.utils.toArray('.feature-card');
         if (featureCards.length) {
-            gsap.from(featureCards, {
-                scrollTrigger: {
-                    trigger: '.features-section',
-                    start: 'top 78%',
-                    toggleActions: 'play none none none'
-                },
-                y: 60,
-                opacity: 0,
-                duration: 0.95,
-                stagger: 0.2,
-                ease: 'power3.out'
-            });
-
             featureCards.forEach(function (card) {
-                var icon = card.querySelector('.feature-icon');
-                if (!icon) return;
-
-                gsap.from(icon, {
+                gsap.from(card, {
                     scrollTrigger: {
                         trigger: card,
-                        start: 'top 78%',
+                        start: 'top 88%',
                         toggleActions: 'play none none none'
                     },
+                    immediateRender: false,
+                    y: 50,
                     opacity: 0,
-                    scale: 0.92,
-                    rotate: -4,
-                    duration: 0.6,
+                    duration: 0.8,
                     ease: 'power3.out'
                 });
             });
@@ -86,6 +70,7 @@
                     start: 'top 80%',
                     toggleActions: 'play none none none'
                 },
+                immediateRender: false,
                 y: 40,
                 opacity: 0,
                 duration: 0.8,
@@ -152,6 +137,7 @@
                     start: 'top 80%',
                     toggleActions: 'play none none none'
                 },
+                immediateRender: false,
                 y: 40,
                 opacity: 0,
                 duration: 0.9,
